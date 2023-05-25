@@ -1,33 +1,43 @@
 {
-  "name": "xyz",
-  "displayName": "Component xyz",
+  "name": "kubernetes-xyz",
+  "displayName": "Kubernetes Xyz",
   "keywords": [
     "pulumi",
-    "xzy",
+    "kubernetes",
+    "xyz",
     "kind/component",
     "category/infrastructure"
   ],
-  "publisher": "Cuemby",
+  "publisher": "Pulumi",
   "resources": {
-    "xyz:index:Xyz": {
-      "description": "",
+    "kubernetes-xyz:index:KubernetesXyz": {
+      "description": "Automates the management and issuance of TLS certificates from various issuing sources within Kubernetes",
       "isComponent": true,
       "inputProperties": {
+        "global": {
+          "$ref": "#/types/kubernetes-xyz:index:KubernetesXyzGlobal"
+        },
         "helmOptions": {
-          "$ref": "#/types/xyz:index:Release",
+          "$ref": "#/types/kubernetes-xyz:index:Release",
           "description": "HelmOptions is an escape hatch that lets the end user control any aspect of the Helm deployment. This exposes the entirety of the underlying Helm Release component args."
         },
-        "properties": {
-          "status": {
-            "$ref": "#/types/xyz:index:ReleaseStatus",
-            "description": "Detailed information about the status of the underlying Helm deployment."
-          }
+        "installCRDs": {
+          "type": "boolean"
         }
-      }
+      },
+      "properties": {
+        "status": {
+          "$ref": "#/types/kubernetes-xyz:index:ReleaseStatus",
+          "description": "Detailed information about the status of the underlying Helm deployment."
+        }
+      },
+      "required": [
+        "status"
+      ]
     }
   },
   "types": {
-    "xyz:index:Release": {
+    "kubernetes-xyz:index:Release": {
       "description": "A Release is an instance of a chart running in a Kubernetes cluster.\nA Chart is a Helm package. It contains all of the resource definitions necessary to run an application, tool, or service inside of a Kubernetes cluster.\nNote - Helm Release is currently in BETA and may change. Use in production environment is discouraged.",
       "properties": {
         "atomic": {
@@ -118,7 +128,7 @@
           "description": "Re-use the given name, even if that name is already used. This is unsafe in production"
         },
         "repositoryOpts": {
-          "$ref": "#/types/xyz:index:RepositoryOpts",
+          "$ref": "#/types/kubernetes-xyz:index:RepositoryOpts",
           "description": "Specification defining the Helm chart repository to use."
         },
         "resetValues": {
@@ -180,7 +190,7 @@
       },
       "type": "object"
     },
-    "xyz:index:ReleaseStatus": {
+    "kubernetes-xyz:index:ReleaseStatus": {
       "properties": {
         "appVersion": {
           "type": "string",
@@ -222,7 +232,7 @@
         "status"
       ]
     },
-    "xyz:index:RepositoryOpts": {
+    "kubernetes-xyz:index:RepositoryOpts": {
       "description": "Specification defining the Helm chart repository to use.",
       "properties": {
         "caFile": {
@@ -264,12 +274,17 @@
           ]
         }
       }
+    },
+    "kubernetes-xyz:index:KubernetesXyzGlobal": {
+      "properties": {},
+      "type": "object"
     }
   },
   "language": {
     "csharp": {
+      "rootNamespace": "Cuemby",
       "namespaces": {
-        "xyz": "Xyz"
+        "kubernetes-xyz": "KubernetesXyz"
       },
       "packageReferences": {
         "Pulumi": "3.*",
@@ -278,8 +293,7 @@
     },
     "go": {
       "generateResourceContainerTypes": true,
-      "importBasePath": "github.com/cuemby/xyz/sdk/go/xyz",
-      "generateExtraInputTypes": true
+      "importBasePath": "github.com/pulumi/pulumi-kubernetes-xyz/sdk/go/kubernetes-xyz"
     },
     "nodejs": {
       "dependencies": {

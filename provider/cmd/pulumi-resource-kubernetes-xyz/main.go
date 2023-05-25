@@ -19,8 +19,8 @@ package main
 import (
 	_ "embed"
 
-	"github.com/cuemby/pulumi-xyz/pkg/provider"
-	"github.com/cuemby/pulumi-xyz/pkg/version"
+	"github.com/cuemby/pulumi-kubernetes-xyz/pkg/provider"
+	"github.com/cuemby/pulumi-kubernetes-xyz/pkg/version"
 )
 
 //go:embed schema-embed.json

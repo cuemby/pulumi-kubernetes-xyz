@@ -1,6 +1,6 @@
 VERSION         := $(shell pulumictl get version)
 
-PACK            := xyz
+PACK            := kubernetes-xyz
 PROJECT         := github.com/cuemby/pulumi-${PACK}
 
 PROVIDER        := pulumi-resource-${PACK}
