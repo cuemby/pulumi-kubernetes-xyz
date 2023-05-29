@@ -25,25 +25,25 @@ const (
 	RepoUrl   = "https://repourl"
 )
 
-type KubernetesXyz struct {
+type Xyz struct {
 	pulumi.ResourceState
 	Status helmv3.ReleaseStatusOutput `pulumi:"status" pschema:"out"`
 }
 
-func (c *KubernetesXyz) SetOutputs(out helmv3.ReleaseStatusOutput) { c.Status = out }
-func (c *KubernetesXyz) Type() string                              { return ComponentName }
-func (c *KubernetesXyz) DefaultChartName() string                  { return ChartName }
-func (c *KubernetesXyz) DefaultRepoURL() string                    { return RepoUrl }
+func (c *Xyz) SetOutputs(out helmv3.ReleaseStatusOutput) { c.Status = out }
+func (c *Xyz) Type() string                              { return ComponentName }
+func (c *Xyz) DefaultChartName() string                  { return ChartName }
+func (c *Xyz) DefaultRepoURL() string                    { return RepoUrl }
 
-// KubernetesXyzArgs contains the set of arguments for creating a KubernetesXyz component resource.
-type KubernetesXyzArgs struct {
+// XyzArgs contains the set of arguments for creating a Xyz component resource.
+type XyzArgs struct {
 	Global      *KubernetesXyzGlobal `pulumi:"global"`
 	InstallCRDs *bool                `pulumi:"installCRDs"`
 	// HelmOptions is an escape hatch that lets the end user control any aspect of the
-	// Helm deployment. This exposes the entirety of the underlying Helm KubernetesXyz component args.
-	HelmOptions *helmbase.ReleaseType `pulumi:"helmOptions" pschema:"ref=#/types/pulumi-xyz:index:Release" json:"-"`
+	// Helm deployment. This exposes the entirety of the underlying Helm Xyz component args.
+	HelmOptions *helmbase.ReleaseType `pulumi:"helmOptions" pschema:"ref=#/types/pulumi-kubernetes-xyz:index:Release" json:"-"`
 }
 
-func (args *KubernetesXyzArgs) R() **helmbase.ReleaseType { return &args.HelmOptions }
+func (args *XyzArgs) R() **helmbase.ReleaseType { return &args.HelmOptions }
 
 type KubernetesXyzGlobal struct{}

@@ -10,12 +10,12 @@
   ],
   "publisher": "Pulumi",
   "resources": {
-    "kubernetes-xyz:index:KubernetesXyz": {
+    "kubernetes-xyz:index:Xyz": {
       "description": "Automates the management and issuance of TLS certificates from various issuing sources within Kubernetes",
       "isComponent": true,
       "inputProperties": {
         "global": {
-          "$ref": "#/types/kubernetes-xyz:index:KubernetesXyzGlobal"
+          "$ref": "#/types/kubernetes-xyz:index:XyzGlobal"
         },
         "helmOptions": {
           "$ref": "#/types/kubernetes-xyz:index:Release",
@@ -275,7 +275,7 @@
         }
       }
     },
-    "kubernetes-xyz:index:KubernetesXyzGlobal": {
+    "kubernetes-xyz:index:XyzGlobal": {
       "properties": {},
       "type": "object"
     }
@@ -284,7 +284,7 @@
     "csharp": {
       "rootNamespace": "Cuemby",
       "namespaces": {
-        "kubernetes-xyz": "KubernetesXyz"
+        "kubernetes-xyz": "Xyz"
       },
       "packageReferences": {
         "Pulumi": "3.*",

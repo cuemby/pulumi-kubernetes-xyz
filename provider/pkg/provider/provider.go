@@ -25,7 +25,7 @@ import (
 
 const (
 	ProviderName  = "kubernetes-xyz"
-	ComponentName = ProviderName + ":index:KubernetesXyz"
+	ComponentName = ProviderName + ":index:Xyz"
 )
 
 // Serve launches the gRPC server for the resource provider.
@@ -40,5 +40,5 @@ func Serve(version string, schema []byte) {
 func Construct(ctx *pulumi.Context, typ, name string, inputs pp.ConstructInputs,
 	opts pulumi.ResourceOption) (*pp.ConstructResult, error) {
 
-	return helmbase.Construct(ctx, &KubernetesXyz{}, typ, name, &KubernetesXyzArgs{}, inputs, opts)
+	return helmbase.Construct(ctx, &Xyz{}, typ, name, &XyzArgs{}, inputs, opts)
 }

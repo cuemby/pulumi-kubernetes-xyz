@@ -5,7 +5,7 @@ before:
   hooks:
     - make build_provider
 builds:
-  - binary: pulumi-resource-kubernetes-ingress-nginx
+  - binary: pulumi-resource-kubernetes-xyz
     dir: provider
     env:
       - CGO_ENABLED=0
@@ -17,8 +17,8 @@ builds:
       - windows
       - linux
     ldflags:
-      - -X github.com/cuemby/pulumi-xyz/pkg/version.Version={{.Tag }}
-    main: ./cmd/pulumi-resource-xyz/
+      - -X github.com/cuemby/pulumi-kubernetes-xyz/pkg/version.Version={{.Tag }}
+    main: ./cmd/pulumi-resource-kubernetes-xyz/
 changelog:
   skip: true
 release:
