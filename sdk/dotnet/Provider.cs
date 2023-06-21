@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Cuemby.KubernetesXyz
+namespace Cuemby.Xyz
 {
-    [KubernetesXyzResourceType("pulumi:providers:kubernetes-xyz")]
+    [XyzResourceType("pulumi:providers:kubernetes-xyz")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>

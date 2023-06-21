@@ -37,8 +37,8 @@ func (c *Xyz) DefaultRepoURL() string                    { return RepoUrl }
 
 // XyzArgs contains the set of arguments for creating a Xyz component resource.
 type XyzArgs struct {
-	Global      *KubernetesXyzGlobal `pulumi:"global"`
-	InstallCRDs *bool                `pulumi:"installCRDs"`
+	Global      *XyzGlobal `pulumi:"global"`
+	InstallCRDs *bool      `pulumi:"installCRDs"`
 	// HelmOptions is an escape hatch that lets the end user control any aspect of the
 	// Helm deployment. This exposes the entirety of the underlying Helm Xyz component args.
 	HelmOptions *helmbase.ReleaseType `pulumi:"helmOptions" pschema:"ref=#/types/pulumi-kubernetes-xyz:index:Release" json:"-"`
@@ -46,4 +46,4 @@ type XyzArgs struct {
 
 func (args *XyzArgs) R() **helmbase.ReleaseType { return &args.HelmOptions }
 
-type KubernetesXyzGlobal struct{}
+type XyzGlobal struct{}

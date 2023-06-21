@@ -10,124 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type KubernetesXyzGlobal struct {
-}
-
-// KubernetesXyzGlobalInput is an input type that accepts KubernetesXyzGlobalArgs and KubernetesXyzGlobalOutput values.
-// You can construct a concrete instance of `KubernetesXyzGlobalInput` via:
-//
-//	KubernetesXyzGlobalArgs{...}
-type KubernetesXyzGlobalInput interface {
-	pulumi.Input
-
-	ToKubernetesXyzGlobalOutput() KubernetesXyzGlobalOutput
-	ToKubernetesXyzGlobalOutputWithContext(context.Context) KubernetesXyzGlobalOutput
-}
-
-type KubernetesXyzGlobalArgs struct {
-}
-
-func (KubernetesXyzGlobalArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*KubernetesXyzGlobal)(nil)).Elem()
-}
-
-func (i KubernetesXyzGlobalArgs) ToKubernetesXyzGlobalOutput() KubernetesXyzGlobalOutput {
-	return i.ToKubernetesXyzGlobalOutputWithContext(context.Background())
-}
-
-func (i KubernetesXyzGlobalArgs) ToKubernetesXyzGlobalOutputWithContext(ctx context.Context) KubernetesXyzGlobalOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(KubernetesXyzGlobalOutput)
-}
-
-func (i KubernetesXyzGlobalArgs) ToKubernetesXyzGlobalPtrOutput() KubernetesXyzGlobalPtrOutput {
-	return i.ToKubernetesXyzGlobalPtrOutputWithContext(context.Background())
-}
-
-func (i KubernetesXyzGlobalArgs) ToKubernetesXyzGlobalPtrOutputWithContext(ctx context.Context) KubernetesXyzGlobalPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(KubernetesXyzGlobalOutput).ToKubernetesXyzGlobalPtrOutputWithContext(ctx)
-}
-
-// KubernetesXyzGlobalPtrInput is an input type that accepts KubernetesXyzGlobalArgs, KubernetesXyzGlobalPtr and KubernetesXyzGlobalPtrOutput values.
-// You can construct a concrete instance of `KubernetesXyzGlobalPtrInput` via:
-//
-//	        KubernetesXyzGlobalArgs{...}
-//
-//	or:
-//
-//	        nil
-type KubernetesXyzGlobalPtrInput interface {
-	pulumi.Input
-
-	ToKubernetesXyzGlobalPtrOutput() KubernetesXyzGlobalPtrOutput
-	ToKubernetesXyzGlobalPtrOutputWithContext(context.Context) KubernetesXyzGlobalPtrOutput
-}
-
-type kubernetesXyzGlobalPtrType KubernetesXyzGlobalArgs
-
-func KubernetesXyzGlobalPtr(v *KubernetesXyzGlobalArgs) KubernetesXyzGlobalPtrInput {
-	return (*kubernetesXyzGlobalPtrType)(v)
-}
-
-func (*kubernetesXyzGlobalPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**KubernetesXyzGlobal)(nil)).Elem()
-}
-
-func (i *kubernetesXyzGlobalPtrType) ToKubernetesXyzGlobalPtrOutput() KubernetesXyzGlobalPtrOutput {
-	return i.ToKubernetesXyzGlobalPtrOutputWithContext(context.Background())
-}
-
-func (i *kubernetesXyzGlobalPtrType) ToKubernetesXyzGlobalPtrOutputWithContext(ctx context.Context) KubernetesXyzGlobalPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(KubernetesXyzGlobalPtrOutput)
-}
-
-type KubernetesXyzGlobalOutput struct{ *pulumi.OutputState }
-
-func (KubernetesXyzGlobalOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*KubernetesXyzGlobal)(nil)).Elem()
-}
-
-func (o KubernetesXyzGlobalOutput) ToKubernetesXyzGlobalOutput() KubernetesXyzGlobalOutput {
-	return o
-}
-
-func (o KubernetesXyzGlobalOutput) ToKubernetesXyzGlobalOutputWithContext(ctx context.Context) KubernetesXyzGlobalOutput {
-	return o
-}
-
-func (o KubernetesXyzGlobalOutput) ToKubernetesXyzGlobalPtrOutput() KubernetesXyzGlobalPtrOutput {
-	return o.ToKubernetesXyzGlobalPtrOutputWithContext(context.Background())
-}
-
-func (o KubernetesXyzGlobalOutput) ToKubernetesXyzGlobalPtrOutputWithContext(ctx context.Context) KubernetesXyzGlobalPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v KubernetesXyzGlobal) *KubernetesXyzGlobal {
-		return &v
-	}).(KubernetesXyzGlobalPtrOutput)
-}
-
-type KubernetesXyzGlobalPtrOutput struct{ *pulumi.OutputState }
-
-func (KubernetesXyzGlobalPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**KubernetesXyzGlobal)(nil)).Elem()
-}
-
-func (o KubernetesXyzGlobalPtrOutput) ToKubernetesXyzGlobalPtrOutput() KubernetesXyzGlobalPtrOutput {
-	return o
-}
-
-func (o KubernetesXyzGlobalPtrOutput) ToKubernetesXyzGlobalPtrOutputWithContext(ctx context.Context) KubernetesXyzGlobalPtrOutput {
-	return o
-}
-
-func (o KubernetesXyzGlobalPtrOutput) Elem() KubernetesXyzGlobalOutput {
-	return o.ApplyT(func(v *KubernetesXyzGlobal) KubernetesXyzGlobal {
-		if v != nil {
-			return *v
-		}
-		var ret KubernetesXyzGlobal
-		return ret
-	}).(KubernetesXyzGlobalOutput)
-}
-
 // A Release is an instance of a chart running in a Kubernetes cluster.
 // A Chart is a Helm package. It contains all of the resource definitions necessary to run an application, tool, or service inside of a Kubernetes cluster.
 // Note - Helm Release is currently in BETA and may change. Use in production environment is discouraged.
@@ -1183,18 +1065,136 @@ func (o RepositoryOptsPtrOutput) Username() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type XyzGlobal struct {
+}
+
+// XyzGlobalInput is an input type that accepts XyzGlobalArgs and XyzGlobalOutput values.
+// You can construct a concrete instance of `XyzGlobalInput` via:
+//
+//	XyzGlobalArgs{...}
+type XyzGlobalInput interface {
+	pulumi.Input
+
+	ToXyzGlobalOutput() XyzGlobalOutput
+	ToXyzGlobalOutputWithContext(context.Context) XyzGlobalOutput
+}
+
+type XyzGlobalArgs struct {
+}
+
+func (XyzGlobalArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*XyzGlobal)(nil)).Elem()
+}
+
+func (i XyzGlobalArgs) ToXyzGlobalOutput() XyzGlobalOutput {
+	return i.ToXyzGlobalOutputWithContext(context.Background())
+}
+
+func (i XyzGlobalArgs) ToXyzGlobalOutputWithContext(ctx context.Context) XyzGlobalOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XyzGlobalOutput)
+}
+
+func (i XyzGlobalArgs) ToXyzGlobalPtrOutput() XyzGlobalPtrOutput {
+	return i.ToXyzGlobalPtrOutputWithContext(context.Background())
+}
+
+func (i XyzGlobalArgs) ToXyzGlobalPtrOutputWithContext(ctx context.Context) XyzGlobalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XyzGlobalOutput).ToXyzGlobalPtrOutputWithContext(ctx)
+}
+
+// XyzGlobalPtrInput is an input type that accepts XyzGlobalArgs, XyzGlobalPtr and XyzGlobalPtrOutput values.
+// You can construct a concrete instance of `XyzGlobalPtrInput` via:
+//
+//	        XyzGlobalArgs{...}
+//
+//	or:
+//
+//	        nil
+type XyzGlobalPtrInput interface {
+	pulumi.Input
+
+	ToXyzGlobalPtrOutput() XyzGlobalPtrOutput
+	ToXyzGlobalPtrOutputWithContext(context.Context) XyzGlobalPtrOutput
+}
+
+type xyzGlobalPtrType XyzGlobalArgs
+
+func XyzGlobalPtr(v *XyzGlobalArgs) XyzGlobalPtrInput {
+	return (*xyzGlobalPtrType)(v)
+}
+
+func (*xyzGlobalPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**XyzGlobal)(nil)).Elem()
+}
+
+func (i *xyzGlobalPtrType) ToXyzGlobalPtrOutput() XyzGlobalPtrOutput {
+	return i.ToXyzGlobalPtrOutputWithContext(context.Background())
+}
+
+func (i *xyzGlobalPtrType) ToXyzGlobalPtrOutputWithContext(ctx context.Context) XyzGlobalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XyzGlobalPtrOutput)
+}
+
+type XyzGlobalOutput struct{ *pulumi.OutputState }
+
+func (XyzGlobalOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*XyzGlobal)(nil)).Elem()
+}
+
+func (o XyzGlobalOutput) ToXyzGlobalOutput() XyzGlobalOutput {
+	return o
+}
+
+func (o XyzGlobalOutput) ToXyzGlobalOutputWithContext(ctx context.Context) XyzGlobalOutput {
+	return o
+}
+
+func (o XyzGlobalOutput) ToXyzGlobalPtrOutput() XyzGlobalPtrOutput {
+	return o.ToXyzGlobalPtrOutputWithContext(context.Background())
+}
+
+func (o XyzGlobalOutput) ToXyzGlobalPtrOutputWithContext(ctx context.Context) XyzGlobalPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v XyzGlobal) *XyzGlobal {
+		return &v
+	}).(XyzGlobalPtrOutput)
+}
+
+type XyzGlobalPtrOutput struct{ *pulumi.OutputState }
+
+func (XyzGlobalPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**XyzGlobal)(nil)).Elem()
+}
+
+func (o XyzGlobalPtrOutput) ToXyzGlobalPtrOutput() XyzGlobalPtrOutput {
+	return o
+}
+
+func (o XyzGlobalPtrOutput) ToXyzGlobalPtrOutputWithContext(ctx context.Context) XyzGlobalPtrOutput {
+	return o
+}
+
+func (o XyzGlobalPtrOutput) Elem() XyzGlobalOutput {
+	return o.ApplyT(func(v *XyzGlobal) XyzGlobal {
+		if v != nil {
+			return *v
+		}
+		var ret XyzGlobal
+		return ret
+	}).(XyzGlobalOutput)
+}
+
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*KubernetesXyzGlobalInput)(nil)).Elem(), KubernetesXyzGlobalArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*KubernetesXyzGlobalPtrInput)(nil)).Elem(), KubernetesXyzGlobalArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReleaseInput)(nil)).Elem(), ReleaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReleasePtrInput)(nil)).Elem(), ReleaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryOptsInput)(nil)).Elem(), RepositoryOptsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryOptsPtrInput)(nil)).Elem(), RepositoryOptsArgs{})
-	pulumi.RegisterOutputType(KubernetesXyzGlobalOutput{})
-	pulumi.RegisterOutputType(KubernetesXyzGlobalPtrOutput{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XyzGlobalInput)(nil)).Elem(), XyzGlobalArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XyzGlobalPtrInput)(nil)).Elem(), XyzGlobalArgs{})
 	pulumi.RegisterOutputType(ReleaseOutput{})
 	pulumi.RegisterOutputType(ReleasePtrOutput{})
 	pulumi.RegisterOutputType(ReleaseStatusOutput{})
 	pulumi.RegisterOutputType(RepositoryOptsOutput{})
 	pulumi.RegisterOutputType(RepositoryOptsPtrOutput{})
+	pulumi.RegisterOutputType(XyzGlobalOutput{})
+	pulumi.RegisterOutputType(XyzGlobalPtrOutput{})
 }

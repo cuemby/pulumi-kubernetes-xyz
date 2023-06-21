@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Cuemby.KubernetesXyz.Inputs
+namespace Cuemby.Xyz.Inputs
 {
 
-    public sealed class KubernetesXyzGlobalArgs : global::Pulumi.ResourceArgs
+    public sealed class XyzGlobalArgs : global::Pulumi.ResourceArgs
     {
-        public KubernetesXyzGlobalArgs()
+        public XyzGlobalArgs()
         {
         }
-        public static new KubernetesXyzGlobalArgs Empty => new KubernetesXyzGlobalArgs();
+        public static new XyzGlobalArgs Empty => new XyzGlobalArgs();
     }
 }

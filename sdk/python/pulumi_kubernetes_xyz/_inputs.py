@@ -10,16 +10,10 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
-    'KubernetesXyzGlobalArgs',
     'ReleaseArgs',
     'RepositoryOptsArgs',
+    'XyzGlobalArgs',
 ]
-
-@pulumi.input_type
-class KubernetesXyzGlobalArgs:
-    def __init__(__self__):
-        pass
-
 
 @pulumi.input_type
 class ReleaseArgs:
@@ -661,5 +655,11 @@ class RepositoryOptsArgs:
     @username.setter
     def username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class XyzGlobalArgs:
+    def __init__(__self__):
+        pass
 
 

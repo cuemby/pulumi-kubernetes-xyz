@@ -11,16 +11,16 @@ from . import _utilities
 from . import outputs
 from ._inputs import *
 
-__all__ = ['KubernetesXyzArgs', 'KubernetesXyz']
+__all__ = ['XyzArgs', 'Xyz']
 
 @pulumi.input_type
-class KubernetesXyzArgs:
+class XyzArgs:
     def __init__(__self__, *,
-                 global_: Optional[pulumi.Input['KubernetesXyzGlobalArgs']] = None,
+                 global_: Optional[pulumi.Input['XyzGlobalArgs']] = None,
                  helm_options: Optional[pulumi.Input['ReleaseArgs']] = None,
                  install_crds: Optional[pulumi.Input[bool]] = None):
         """
-        The set of arguments for constructing a KubernetesXyz resource.
+        The set of arguments for constructing a Xyz resource.
         :param pulumi.Input['ReleaseArgs'] helm_options: HelmOptions is an escape hatch that lets the end user control any aspect of the Helm deployment. This exposes the entirety of the underlying Helm Release component args.
         """
         if global_ is not None:
@@ -32,11 +32,11 @@ class KubernetesXyzArgs:
 
     @property
     @pulumi.getter(name="global")
-    def global_(self) -> Optional[pulumi.Input['KubernetesXyzGlobalArgs']]:
+    def global_(self) -> Optional[pulumi.Input['XyzGlobalArgs']]:
         return pulumi.get(self, "global_")
 
     @global_.setter
-    def global_(self, value: Optional[pulumi.Input['KubernetesXyzGlobalArgs']]):
+    def global_(self, value: Optional[pulumi.Input['XyzGlobalArgs']]):
         pulumi.set(self, "global_", value)
 
     @property
@@ -61,12 +61,12 @@ class KubernetesXyzArgs:
         pulumi.set(self, "install_crds", value)
 
 
-class KubernetesXyz(pulumi.ComponentResource):
+class Xyz(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 global_: Optional[pulumi.Input[pulumi.InputType['KubernetesXyzGlobalArgs']]] = None,
+                 global_: Optional[pulumi.Input[pulumi.InputType['XyzGlobalArgs']]] = None,
                  helm_options: Optional[pulumi.Input[pulumi.InputType['ReleaseArgs']]] = None,
                  install_crds: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -81,18 +81,18 @@ class KubernetesXyz(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: Optional[KubernetesXyzArgs] = None,
+                 args: Optional[XyzArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Automates the management and issuance of TLS certificates from various issuing sources within Kubernetes
 
         :param str resource_name: The name of the resource.
-        :param KubernetesXyzArgs args: The arguments to use to populate this resource's properties.
+        :param XyzArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
         ...
     def __init__(__self__, resource_name: str, *args, **kwargs):
-        resource_args, opts = _utilities.get_resource_args_opts(KubernetesXyzArgs, pulumi.ResourceOptions, *args, **kwargs)
+        resource_args, opts = _utilities.get_resource_args_opts(XyzArgs, pulumi.ResourceOptions, *args, **kwargs)
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
@@ -101,7 +101,7 @@ class KubernetesXyz(pulumi.ComponentResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 global_: Optional[pulumi.Input[pulumi.InputType['KubernetesXyzGlobalArgs']]] = None,
+                 global_: Optional[pulumi.Input[pulumi.InputType['XyzGlobalArgs']]] = None,
                  helm_options: Optional[pulumi.Input[pulumi.InputType['ReleaseArgs']]] = None,
                  install_crds: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -113,14 +113,14 @@ class KubernetesXyz(pulumi.ComponentResource):
         else:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = KubernetesXyzArgs.__new__(KubernetesXyzArgs)
+            __props__ = XyzArgs.__new__(XyzArgs)
 
             __props__.__dict__["global_"] = global_
             __props__.__dict__["helm_options"] = helm_options
             __props__.__dict__["install_crds"] = install_crds
             __props__.__dict__["status"] = None
-        super(KubernetesXyz, __self__).__init__(
-            'kubernetes-xyz:index:KubernetesXyz',
+        super(Xyz, __self__).__init__(
+            'kubernetes-xyz:index:Xyz',
             resource_name,
             __props__,
             opts,

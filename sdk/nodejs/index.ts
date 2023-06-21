@@ -5,15 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export { KubernetesXyzArgs } from "./kubernetesXyz";
-export type KubernetesXyz = import("./kubernetesXyz").KubernetesXyz;
-export const KubernetesXyz: typeof import("./kubernetesXyz").KubernetesXyz = null as any;
-utilities.lazyLoad(exports, ["KubernetesXyz"], () => require("./kubernetesXyz"));
-
 export { ProviderArgs } from "./provider";
 export type Provider = import("./provider").Provider;
 export const Provider: typeof import("./provider").Provider = null as any;
 utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
+export { XyzArgs } from "./xyz";
+export type Xyz = import("./xyz").Xyz;
+export const Xyz: typeof import("./xyz").Xyz = null as any;
+utilities.lazyLoad(exports, ["Xyz"], () => require("./xyz"));
 
 
 // Export sub-modules:
@@ -27,8 +27,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "kubernetes-xyz:index:KubernetesXyz":
-                return new KubernetesXyz(name, <any>undefined, { urn })
+            case "kubernetes-xyz:index:Xyz":
+                return new Xyz(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }

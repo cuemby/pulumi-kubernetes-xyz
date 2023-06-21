@@ -5,9 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
-export interface KubernetesXyzGlobalArgs {
-}
-
 /**
  * A Release is an instance of a chart running in a Kubernetes cluster.
  * A Chart is a Helm package. It contains all of the resource definitions necessary to run an application, tool, or service inside of a Kubernetes cluster.
@@ -176,4 +173,7 @@ export interface RepositoryOptsArgs {
      * Username for HTTP basic authentication
      */
     username?: pulumi.Input<string>;
+}
+
+export interface XyzGlobalArgs {
 }

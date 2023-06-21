@@ -9,19 +9,19 @@ import * as utilities from "./utilities";
 /**
  * Automates the management and issuance of TLS certificates from various issuing sources within Kubernetes
  */
-export class KubernetesXyz extends pulumi.ComponentResource {
+export class Xyz extends pulumi.ComponentResource {
     /** @internal */
-    public static readonly __pulumiType = 'kubernetes-xyz:index:KubernetesXyz';
+    public static readonly __pulumiType = 'kubernetes-xyz:index:Xyz';
 
     /**
-     * Returns true if the given object is an instance of KubernetesXyz.  This is designed to work even
+     * Returns true if the given object is an instance of Xyz.  This is designed to work even
      * when multiple copies of the Pulumi SDK have been loaded into the same process.
      */
-    public static isInstance(obj: any): obj is KubernetesXyz {
+    public static isInstance(obj: any): obj is Xyz {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === KubernetesXyz.__pulumiType;
+        return obj['__pulumiType'] === Xyz.__pulumiType;
     }
 
     /**
@@ -30,13 +30,13 @@ export class KubernetesXyz extends pulumi.ComponentResource {
     public /*out*/ readonly status!: pulumi.Output<outputs.ReleaseStatus>;
 
     /**
-     * Create a KubernetesXyz resource with the given unique name, arguments, and options.
+     * Create a Xyz resource with the given unique name, arguments, and options.
      *
      * @param name The _unique_ name of the resource.
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: KubernetesXyzArgs, opts?: pulumi.ComponentResourceOptions) {
+    constructor(name: string, args?: XyzArgs, opts?: pulumi.ComponentResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (!opts.id) {
@@ -48,15 +48,15 @@ export class KubernetesXyz extends pulumi.ComponentResource {
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        super(KubernetesXyz.__pulumiType, name, resourceInputs, opts, true /*remote*/);
+        super(Xyz.__pulumiType, name, resourceInputs, opts, true /*remote*/);
     }
 }
 
 /**
- * The set of arguments for constructing a KubernetesXyz resource.
+ * The set of arguments for constructing a Xyz resource.
  */
-export interface KubernetesXyzArgs {
-    global?: pulumi.Input<inputs.KubernetesXyzGlobalArgs>;
+export interface XyzArgs {
+    global?: pulumi.Input<inputs.XyzGlobalArgs>;
     /**
      * HelmOptions is an escape hatch that lets the end user control any aspect of the Helm deployment. This exposes the entirety of the underlying Helm Release component args.
      */

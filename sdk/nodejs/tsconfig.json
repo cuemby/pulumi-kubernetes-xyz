@@ -14,11 +14,11 @@
     },
     "files": [
         "index.ts",
-        "kubernetesXyz.ts",
         "provider.ts",
         "types/index.ts",
         "types/input.ts",
         "types/output.ts",
-        "utilities.ts"
+        "utilities.ts",
+        "xyz.ts"
     ]
 }

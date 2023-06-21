@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Cuemby.KubernetesXyz
+namespace Cuemby.Xyz
 {
     /// <summary>
     /// Automates the management and issuance of TLS certificates from various issuing sources within Kubernetes
     /// </summary>
-    [KubernetesXyzResourceType("kubernetes-xyz:index:KubernetesXyz")]
-    public partial class KubernetesXyz : global::Pulumi.ComponentResource
+    [XyzResourceType("kubernetes-xyz:index:Xyz")]
+    public partial class Xyz : global::Pulumi.ComponentResource
     {
         /// <summary>
         /// Detailed information about the status of the underlying Helm deployment.
@@ -24,14 +24,14 @@ namespace Cuemby.KubernetesXyz
 
 
         /// <summary>
-        /// Create a KubernetesXyz resource with the given unique name, arguments, and options.
+        /// Create a Xyz resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public KubernetesXyz(string name, KubernetesXyzArgs? args = null, ComponentResourceOptions? options = null)
-            : base("kubernetes-xyz:index:KubernetesXyz", name, args ?? new KubernetesXyzArgs(), MakeResourceOptions(options, ""), remote: true)
+        public Xyz(string name, XyzArgs? args = null, ComponentResourceOptions? options = null)
+            : base("kubernetes-xyz:index:Xyz", name, args ?? new XyzArgs(), MakeResourceOptions(options, ""), remote: true)
         {
         }
 
@@ -48,10 +48,10 @@ namespace Cuemby.KubernetesXyz
         }
     }
 
-    public sealed class KubernetesXyzArgs : global::Pulumi.ResourceArgs
+    public sealed class XyzArgs : global::Pulumi.ResourceArgs
     {
         [Input("global")]
-        public Input<Inputs.KubernetesXyzGlobalArgs>? Global { get; set; }
+        public Input<Inputs.XyzGlobalArgs>? Global { get; set; }
 
         /// <summary>
         /// HelmOptions is an escape hatch that lets the end user control any aspect of the Helm deployment. This exposes the entirety of the underlying Helm Release component args.
@@ -62,9 +62,9 @@ namespace Cuemby.KubernetesXyz
         [Input("installCRDs")]
         public Input<bool>? InstallCRDs { get; set; }
 
-        public KubernetesXyzArgs()
+        public XyzArgs()
         {
         }
-        public static new KubernetesXyzArgs Empty => new KubernetesXyzArgs();
+        public static new XyzArgs Empty => new XyzArgs();
     }
 }

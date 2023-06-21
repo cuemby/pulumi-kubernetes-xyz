@@ -5,8 +5,8 @@
 from . import _utilities
 import typing
 # Export this package's modules as members:
-from .kubernetes_xyz import *
 from .provider import *
+from .xyz import *
 from ._inputs import *
 from . import outputs
 _utilities.register(
@@ -17,7 +17,7 @@ _utilities.register(
   "mod": "index",
   "fqn": "pulumi_kubernetes_xyz",
   "classes": {
-   "kubernetes-xyz:index:KubernetesXyz": "KubernetesXyz"
+   "kubernetes-xyz:index:Xyz": "Xyz"
   }
  }
 ]

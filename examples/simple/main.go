@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	xyz "github.com/cuemby/pulumi-kubernetes-xyz/sdk/go/kubernetes-xyz"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -8,9 +9,10 @@ import (
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 
-		_, err := xyz.NewKubernetesXyz(ctx, "simple", &xyz.KubernetesXyzArgs{
+		name := fmt.Sprintf("%s-%s", ctx.Project(), ctx.Stack())
+
+		_, err := xyz.NewXyz(ctx, name, &xyz.XyzArgs{
 			HelmOptions: &xyz.ReleaseArgs{},
-			InstallCRDs: pulumi.Bool(true),
 		})
 		if err != nil {
 			return err

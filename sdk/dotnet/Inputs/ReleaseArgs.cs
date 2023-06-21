@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Cuemby.KubernetesXyz.Inputs
+namespace Cuemby.Xyz.Inputs
 {
 
     /// <summary>
